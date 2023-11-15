@@ -4,6 +4,7 @@ import Input from "../../components/Input";
 import SimpleButton from "../../components/SimpleButton";
 
 import "./styles.css"
+import { Link } from "react-router-dom";
 
 export default function SignUp() {
     return (
@@ -12,12 +13,14 @@ export default function SignUp() {
                 <form className="form" action="/">
                     <div className="title">Log in</div>
                     <Input label="Usuário" />
-                    <Input label="Senha" />
+                    <Input label="Senha" type="password" />
                     <div className="buttonContainer">
-                        <SimpleButton 
-                            text="Entrar" 
-                            type="submit"
-                        />
+                        <Link className="button" to="/chat">
+                            <SimpleButton 
+                                text="Entrar" 
+                                type="submit"
+                            />
+                        </ Link>
                     </div>
                 </form>
             </div>

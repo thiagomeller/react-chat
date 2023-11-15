@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+
 import "./styles.css";
 
-export default function SimpleButton({text, type}) {
+export default function SimpleButton({text, type, id}) {
     return(
-        <Link className="button" to="/chat">
-            <button  className="button" type={type}>
-                {text}
-            </button>
-        </Link>
+        <button id={id} className="button" type={type}>
+            {text}
+        </button>
     )
 }
