@@ -7,7 +7,6 @@ import './styles.css';
 
 export default function Chat() {
     const [messages, setMessages] = useState([]);
-    const [errorMessage, setErrorMessage] = useState("");
 
     function addMessage(event) {
         event.preventDefault();
@@ -15,23 +14,18 @@ export default function Chat() {
         const form = event.currentTarget;
         const formData = new FormData(form);
         if (formData.get("newMessageContent") !== "") {
-          // objeto que representa nosso novo item
-          const newMessage = {
-            id: generateId(),
-            content: formData.get("newMessageContent")
-          };
-    
-          // mantando os itens já cadastrados e adicionando o novo no final
+
+            const newMessage = {
+                id: messages.length +1,
+                content: formData.get("newMessageContent")
+            };
+
           setMessages([...messages, newMessage]);
     
-          // resetando o form e apagando mensagens de erro antigas
           form.reset();
-          setErrorMessage("");
-        } else {
-          setErrorMessage("Preencha!");
         }
       }
-
+      
     return(
         <div className="container">
             <div className="chatbox">
@@ -44,15 +38,16 @@ export default function Chat() {
                     <MessageContainer sender="Atendente" text="blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui" />
                     <MessageContainer sender="Atendente" text="blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui" />
 
-                    <MessageContainer sender="Você" response={false} text="blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui" />
                     <MessageContainer sender="Você" response={false} text="blablablablaaosudhauishdaiusdhaisudhaiu" />
                     {messages.map(message =>(
-                        <MessageContainer sender="Você" response={false} text={message.content}/>
+                        <div key={message.id}>
+                            <MessageContainer sender="Você" response={false} text={message.content} />
+                        </div>
                     ))}
                 </div>
-                <form id="newMessageContent" onSubmit={addMessage} method='get' className='formChat' action="/">
+                <form id="newMessageContent" onSubmit={addMessage} method='get' className='formChat'>
                     <div className='chatInputContainer'>
-                        <Input id="newMessageContent" />
+                        <Input id="newMessageContent" name='newMessageContent' />
                     </div>
                     <div className='chatButtonContainer'>
                         <SimpleButton id="newMessageContent" text="Enviar" type="submit"/>

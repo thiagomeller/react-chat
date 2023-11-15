@@ -1,10 +1,10 @@
 import './styles.css';
 
-export default function Input({label, type="text", id}) {
+export default function Input({id, name, label, type="text"}) {
     return( 
         <div className='inputContainer'>
             <div className='label'>{label}</div>
-            <input id={id} type={type} />
+            <input id={id} name={name} type={type} />
         </div>
     )
 }

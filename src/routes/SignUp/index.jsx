@@ -22,6 +22,7 @@ export default function SignUp() {
                             />
                         </ Link>
                     </div>
+                    Made by Thiago Meller & Filipe Milaneze
                 </form>
             </div>
         </div>
