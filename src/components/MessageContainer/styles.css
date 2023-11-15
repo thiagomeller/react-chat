@@ -1,0 +1,27 @@
+.chat-content {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 8px;
+}
+
+.message {
+    max-width: 300px;
+    min-width: 300px;
+    width: fit-content;
+    word-wrap: break-word;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 8px;
+    background-color: #D72D5C;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.response {
+    align-items: flex-end;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 0;
+    
+}

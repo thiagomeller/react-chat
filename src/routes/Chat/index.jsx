@@ -1,4 +1,5 @@
 import Input from '../../components/Input';
+import MessageContainer from '../../components/MessageContainer';
 import SimpleButton from '../../components/SimpleButton';
 import './styles.css';
 
@@ -13,31 +14,11 @@ export default function Chat() {
                     </h1>
                 </div>
                 <div id="chat-body">
-                    <div class="chat-content">
-                        <h4>Atendente diz:</h4>
-                        <div class="message">
-                            blablablablaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        </div>
-                    </div>
-                    <div class="chat-content">
-                        <h4>Atendente diz:</h4>
-                        <div class="message">
-                            blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui
-                        </div>
-                    </div>
+                    <MessageContainer sender="Atendente" text="blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui" />
+                    <MessageContainer sender="Atendente" text="blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui" />
 
-                    <div class="chat-content response">
-                        <h4>Você diz:</h4>
-                        <div class="message response">
-                            blablablablaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-                        </div>
-                    </div>
-                    <div class="chat-content response">
-                        <h4>Você diz:</h4>
-                        <div class="message response">
-                            blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui
-                        </div>
-                    </div>
+                    <MessageContainer sender="Você" response={false} text="blablablablaaosudhauishdaiusdhaisudhaiusdhaiudhiausdhaiusdahiusdahsdadihauisdhaiushdui" />
+                    <MessageContainer sender="Você" response={false} text="blablablablaaosudhauishdaiusdhaisudhaiu" />
                 </div>
                 <form className='formChat' action="/">
                     <div className='chatInputContainer'>
